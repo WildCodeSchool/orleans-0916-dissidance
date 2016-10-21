@@ -8,6 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AdminBundle\Entity\Reservations;
 use AdminBundle\Form\ReservationsType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use AdminBundle\Entity\Parties;
 
 /**
  * Reservations controller.
@@ -36,28 +38,33 @@ class ReservationsController extends Controller
     /**
      * Creates a new Reservations entity.
      *
-     * @Route("/new", name="reservations_new")
+     * @Route("/new/{id}", name="reservations_new")
      * @Method({"GET", "POST"})
+     * @ParamConverter("party", class="AdminBundle:Parties")
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, Parties $party)
     {
         $reservation = new Reservations();
-        $form = $this->createForm('AdminBundle\Form\ReservationsType', $reservation);
+        $form = $this->createForm('AdminBundle\Form\ReservationsType', $reservation, $mail);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
+            $mail = $this->getDoctrine()
+                ->getRepository('AdminBundle:Mail')
+                ->findOneBy(array('mail'=> $mail));
+            $reservation->setParty($party);
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
 
             return $this->redirectToRoute('reservations_show', array('id' => $reservation->getId()));
         }
-
         return $this->render('reservations/new.html.twig', array(
             'reservation' => $reservation,
             'form' => $form->createView(),
         ));
+
     }
+
 
     /**
      * Finds and displays a Reservations entity.

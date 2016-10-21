@@ -3,7 +3,7 @@
 \*====================================*/
 body {
     width: 100vw;
-    background-image: url(paper_white.jpg);
+    background-image: url(../img/paper_white.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -338,7 +338,7 @@ body h1,h2,h3,h4,h5{
 }
 
 .thumbnail {
-    background: url(img/paper.jpg);
+    background: url(../img/paper.jpg);
     text-align: center;
     height: 50vh;
     min-height: 400px;
@@ -352,7 +352,7 @@ body h1,h2,h3,h4,h5{
 
 .button_thumb {
     position: absolute;
-    background-image: url(img/Dissidance_21.png);
+    background-image: url(../img/Dissidance_21.png);
     background-size: cover;
     width: 60px;
     height: 60px;

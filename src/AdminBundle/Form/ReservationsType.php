@@ -3,10 +3,9 @@
 namespace AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use AdminBundle\Form\MailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\CallbackTransformer;
 class ReservationsType extends AbstractType
 {
     /**
@@ -17,7 +16,7 @@ class ReservationsType extends AbstractType
     {
         $builder
             ->add('nbTickets')
-            ->add('mail', EmailType::class)
+            ->add('mail', MailType::class)
         ;
 
     }

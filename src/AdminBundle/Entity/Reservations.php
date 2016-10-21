@@ -14,7 +14,7 @@ class Reservations
 {
     // my code
             /**
-             * @ORM\ManyToOne(targetEntity="Mail", inversedBy="reservations")
+             * @ORM\ManyToOne(targetEntity="Mail", inversedBy="reservations", cascade={"persist"})
              * @ORM\JoinColumn(name="mail_id", referencedColumnName="id", nullable=false)
              */
             protected $mail;
@@ -38,14 +38,22 @@ class Reservations
                     private $party;
 
                     /**
-                     * Get party
-                     *
-                     * @return integer
+                     * @return mixed
                      */
                     public function getParty()
                     {
                         return $this->party;
                     }
+
+                    /**
+                     * @param mixed $party
+                     */
+                    public function setParty($party)
+                    {
+                        $this->party = $party;
+                    }
+
+
 
 
     // end of my code
