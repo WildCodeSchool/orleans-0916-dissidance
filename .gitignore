@@ -10,3 +10,6 @@
 /vendor/
 /bin/
 /composer.phar
+/app/logs/
+/app/cache/
+/.idea/
