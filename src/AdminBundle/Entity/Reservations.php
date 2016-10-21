@@ -3,7 +3,6 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Reservations
@@ -15,28 +14,26 @@ class Reservations
 {
     // my code
             /**
-             * @ORM\ManyToOne(targetEntity="Email", inversedBy="reservations")
-             * @ORM\JoinColumn(name="email_id", referencedColumnName="id")
-             * @Assert\Type(type="AppBundle\Entity\Email")
-             * @Assert\Valid()
+             * @ORM\ManyToOne(targetEntity="Mail", inversedBy="reservations")
+             * @ORM\JoinColumn(name="mail_id", referencedColumnName="id", nullable=false)
              */
-            protected $email;
+            protected $mail;
 
 
 
-            public function getEmail()
+            public function getMail()
             {
-                return $this->email;
+                return $this->mail;
             }
 
-            public function setEmail(Email $email = null)
+            public function setMail(Mail $mail = null)
             {
-                $this->email = $email;
+                $this->mail = $mail;
             }
 
                     /**
                      * @ORM\ManyToOne(targetEntity="Parties", inversedBy="reservations")
-                     * @ORM\JoinColumn(name="party_id", referencedColumnName="id")
+                     * @ORM\JoinColumn(name="party_id", referencedColumnName="id", nullable=false)
                      */
                     private $party;
 
