@@ -7,6 +7,8 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
             <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/testpola.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/footer.css') }}">
             <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
         {% endblock %}
 
@@ -25,10 +27,10 @@
                     <a href="#nav" id="button_burger"><img id="icon" src="{{ asset('img/burger.png') }}"></a>
                     <ul id="nav">
                         <li><a href="##" id="left_menu"></a></li>
-                        <li class="nav-li"><a href="#">Home</a></li>
+                        <li class="nav-li"><a href="{{ path('user_default_index') }}">Home</a></li>
                         <li class="nav-li"><a href="#">About Dissidance</a></li>
-                        <li class="nav-li"><a href="#">Intimate clubbing</a></li>
-                        <li class="nav-li"><a href="#">Merchandising</a></li>
+                        <li class="nav-li"><a href="#">Clubbing Intime</a></li>
+                        <li class="nav-li"><a href="{{ path('user_default_support') }}">Support</a></li>
                         <li class="nav-li"><a href="#">I have the right place for you</a></li>
                         <li class="nav-li"><a href="#footer">Contact</a>
                         <li class="nav-li" id="last_li"><a id="close_menu" href="##"><img src="{{ asset('img/cancel.png') }}"></a></li>
@@ -39,10 +41,10 @@
                 <div class="burger">
                     <img id="icon" src="{{ asset('img/burger.png') }}">
                     <div id="nav">
-                        <a id="lili" href="#">Home</a><span class="slash">/</span>
+                        <a id="lili" href="{{ path('user_default_index') }}">Home</a><span class="slash">/</span>
                         <a href="#about_dissidance">About Dissidance</a><span class="slash">/</span>
-                        <a href="#intimate_clubbing">Intimate clubbing</a><span class="slash">/</span>
-                        <a href="#">Stamp yourself</a><span class="slash">/</span>
+                        <a href="#intimate_clubbing">Clubbing Intime</a><span class="slash">/</span>
+                        <a href="{{ path('user_default_support') }}">Support</a><span class="slash">/</span>
                         <a href="#">I have the right place for you</a><span class="slash">/</span>
                         <a href="#footer">Contact</a>
                     </div>
@@ -53,7 +55,25 @@
         {% block body %}
             {% block header %}{% endblock %}
             {% block content %}{% endblock %}
-            {% block footer %}{% endblock %}
+            {% block footer %}
+                    <div id="footer">
+                        <div class="container">
+                            <div class="row">
+                                <ul class="list-unstyled">
+                                    <li class="col-sm-4 col-xs-6">
+                                        <a href="#">Sitemaps</a>
+                                    </li>
+                                    <li class="col-sm-4 col-xs-6">
+                                        <a href="#">Terms and conditions</a>
+                                    </li>
+                                    <li class="col-sm-4 col-xs-6">
+                                        <a href="#">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            {% endblock %}
         {% endblock %}
 
     </body>

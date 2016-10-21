@@ -14,4 +14,12 @@ class DefaultController extends Controller
     {
         return $this->render('UserBundle:Default:index.html.twig');
     }
+
+    /**
+     * @Route("/dissidance/support")
+     */
+    public function supportAction()
+    {
+        return $this->render('UserBundle:Default:support.html.twig');
+    }
 }
