@@ -1,17 +1,12 @@
-# Created by .ignore support plugin (hsz.mobi)
-Supprimerait .gitignore
-Supprimerait .idea/workspace.xml
-Supprimerait app/bootstrap.php.cache
-Supprimerait app/cache/dev/
-Supprimerait app/config/parameters.yml
-Supprimerait app/logs/dev.log
-Supprimerait bin/
-Supprimerait src/AdminBundle/
-Supprimerait src/UserBundle/
-Supprimerait tests/
-Supprimerait vendor/
-Supprimerait web/bundles/
-Supprimerait web/css/
-Supprimerait web/fonts/
-Supprimerait web/img/
-Supprimerait web/js/
+/web/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/config/parameters.yml
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/app/phpunit.xml
+/build/
+/vendor/
+/bin/
+/composer.phar
