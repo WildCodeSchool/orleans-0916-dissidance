@@ -2,79 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}D I S S I D A N C E{% endblock %}</title>
-
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-            <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-            <link rel="stylesheet" type="text/css" href="{{ asset('css/testpola.css') }}">
-            <link rel="stylesheet" type="text/css" href="{{ asset('css/footer.css') }}">
-            <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-        {% endblock %}
-
-        {% block javascripts %}
-            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-            <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
-        {% endblock %}
-
-        <link rel="icon" type="image/x-icon" href="{{ asset('img/Dissidance_21.png') }}" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-
     <body>
-        {% block menu %}
-            <div class="menu_screenSm" >
-                <div class="burger">
-                    <a href="#nav" id="button_burger"><img id="icon" src="{{ asset('img/burger.png') }}"></a>
-                    <ul id="nav">
-                        <li><a href="##" id="left_menu"></a></li>
-                        <li class="nav-li"><a href="{{ path('user_default_index') }}">Home</a></li>
-                        <li class="nav-li"><a href="#">About Dissidance</a></li>
-                        <li class="nav-li"><a href="#">Clubbing Intime</a></li>
-                        <li class="nav-li"><a href="{{ path('user_default_support') }}">Support</a></li>
-                        <li class="nav-li"><a href="#">I have the right place for you</a></li>
-                        <li class="nav-li"><a href="#footer">Contact</a>
-                        <li class="nav-li" id="last_li"><a id="close_menu" href="##"><img src="{{ asset('img/cancel.png') }}"></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="menu_screenlg" >
-                <div class="burger">
-                    <img id="icon" src="{{ asset('img/burger.png') }}">
-                    <div id="nav">
-                        <a id="lili" href="{{ path('user_default_index') }}">Home</a><span class="slash">/</span>
-                        <a href="#about_dissidance">About Dissidance</a><span class="slash">/</span>
-                        <a href="#intimate_clubbing">Clubbing Intime</a><span class="slash">/</span>
-                        <a href="{{ path('user_default_support') }}">Support</a><span class="slash">/</span>
-                        <a href="#">I have the right place for you</a><span class="slash">/</span>
-                        <a href="#footer">Contact</a>
-                    </div>
-                </div>
-            </div>
-        {% endblock %}
-
-        {% block body %}
-            {% block header %}{% endblock %}
-            {% block content %}{% endblock %}
-            {% block footer %}
-                    <div id="footer">
-                        <div class="container">
-                            <div class="row">
-                                <ul class="list-unstyled">
-                                    <li class="col-sm-4 col-xs-6">
-                                        <a href="#">Sitemaps</a>
-                                    </li>
-                                    <li class="col-sm-4 col-xs-6">
-                                        <a href="#">Terms and conditions</a>
-                                    </li>
-                                    <li class="col-sm-4 col-xs-6">
-                                        <a href="#">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-            {% endblock %}
-        {% endblock %}
-
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

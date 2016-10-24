@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Party</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ party.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ party.title }}</td>
+            </tr>
+            <tr>
+                <th>Artist</th>
+                <td>{{ party.artist }}</td>
+            </tr>
+            <tr>
+                <th>Place</th>
+                <td>{{ party.place }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ party.content }}</td>
+            </tr>
+            <tr>
+                <th>Soundcloud</th>
+                <td>{{ party.soundcloud }}</td>
+            </tr>
+            <tr>
+                <th>Keyword</th>
+                <td>{{ party.keyword }}</td>
+            </tr>
+            <tr>
+                <th>Imgslide</th>
+                <td>{{ party.imgSlide }}</td>
+            </tr>
+            <tr>
+                <th>Imgcover</th>
+                <td>{{ party.imgCover }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('party_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('party_edit', { 'id': party.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
