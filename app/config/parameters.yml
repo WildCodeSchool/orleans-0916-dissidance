@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file is auto-generated during the composer install
 parameters:
     database_host: 127.0.0.1
@@ -10,3 +11,6 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: fa27801e4509bda32af16e63f0331896676319bd
+=======
+
+>>>>>>> a2418808f61188fd5d4b68ae2cfbcd744f29c210
