@@ -75,7 +75,7 @@ sonata_block:
             contexts:    [admin]
 
 sonata_admin:
-    title:                'Dissidance Dashboard'
+    title:                'Dissidance / Dashboard'
     title_logo:           img/cropped.jpg
 
 # app/config/config.yml
