@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head id="home">
     <meta charset="UTF-8" />
     <title>{% block title %}D I S S I D A N C E{% endblock %}</title>
 
@@ -39,7 +39,7 @@
                 <li class="nav-li js-scrollTo"><a href="#about_dissidance">About Dissidance</a></li>
                 <li class="nav-li js-scrollTo"><a href="#intimate_clubbing">Intimate clubbing</a></li>
                 <li class="nav-li js-scrollTo"><a href="{{ path('support') }}">support</a></li>
-                <li class="nav-li js-scrollTo"><a href="#">I have the right place for you</a></li>
+                <li class="nav-li js-scrollTo"><a href="{{ path('home') }}">I have the right place for you</a></li>
                 <li class="nav-li js-scrollTo"><a href="#footer">Contact</a>
                 <li class="nav-li js-scrollTo" id="last_li"><a id="close_menu" href="##"><img src="{{ asset('img/cancel.png') }}"></a></li>
             </ul>
@@ -49,11 +49,11 @@
         <div class="burger">
             <img id="icon" src="{{ asset('img/burger.png') }}">
             <div id="nav">
-                <a class="js-scrollTo" id="lili" href="{{ path('home') }}">Home</a><span class="slash">/</span>
-                <a class="js-scrollTo" href="#about_dissidance">About Dissidance</a><span class="slash">/</span>
-                <a class="js-scrollTo" href="#intimate_clubbing">Intimate clubbing</a><span class="slash">/</span>
+                <a class="js-scrollTo" id="lili" href="{% block home_link %}#home{% endblock %}">Home</a><span class="slash">/</span>
+                <a class="js-scrollTo" href="{% block about_link %}#about_dissidance{% endblock %}">About Dissidance</a><span class="slash">/</span>
+                <a class="js-scrollTo" href="{% block intimate_link %}#intimate_clubbing{% endblock %}">Intimate clubbing</a><span class="slash">/</span>
                 <a class="js-scrollTo" href="{{ path('support') }}">Support</a><span class="slash">/</span>
-                <a class="js-scrollTo" href="#">I have the right place for you</a><span class="slash">/</span>
+                <a class="js-scrollTo" href="{{ path('home') }}">I have the right place for you</a><span class="slash">/</span>
                 <a class="js-scrollTo" href="#footer">Contact</a>
             </div>
         </div>
@@ -64,7 +64,8 @@
     {% block header %}{% endblock %}
     {% block content %}{% endblock %}
     {% block footer %}
-
+        {{  render(url('new_mail'))  }}
+        <div id="footer"></div>
     {% endblock %}
 {% endblock %}
 

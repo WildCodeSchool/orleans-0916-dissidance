@@ -57,6 +57,7 @@ class ReservationController extends Controller
 
             return $this->redirectToRoute('reservation_show', array('id' => $reservation->getId()));
         }
+
         return $this->render('reservation/new.html.twig', array(
             'reservation' => $reservation,
             'form' => $form->createView(),

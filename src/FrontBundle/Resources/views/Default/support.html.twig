@@ -1,6 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}S U P P O R T{% endblock %}
+{% block home_link %}
+    {{ path('home') }}
+{% endblock %}
+
+{% block about_link %}
+    {{ path('home') ~ '#about_dissidance' }}
+{% endblock %}
+
+{% block intimate_link %}
+    {{ path('home') ~ '#intimate_clubbing' }}
+{% endblock %}
 
 {% block header %}
     <header class="container_header">
