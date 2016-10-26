@@ -22,7 +22,6 @@ class PartyAdmin extends Admin{
             ->add('keyword')
             ->add('imgSlide')
             ->add('imgCover')
-            ->add('reservations')
         ;
     }
 
@@ -71,7 +70,6 @@ class PartyAdmin extends Admin{
             ->add('keyword')
             ->add('imgSlide')
             ->add('imgCover')
-            ->add('reservations')
         ;
     }
 }
