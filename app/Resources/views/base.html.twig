@@ -6,13 +6,29 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/tuile.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/photoswipe.css.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     {% endblock %}
-
     {% block javascripts %}
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+
+        <script type="text/javascript" src="{{ asset('js/lib/klass.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/code.photoswipe-3.0.5.min.js') }}"></script>
+        <script type="text/javascript">
+            (function(window, PhotoSwipe){
+                document.addEventListener('DOMContentLoaded', function(){
+                    var
+                            options = {},
+                            instance = PhotoSwipe.attach( window.document.querySelectorAll('#Gallery a'), options );
+                }, false);
+            }(window, window.Code.PhotoSwipe));
+        </script>
+
+
         <script>
             $(document).ready(function() {
                 $('.js-scrollTo').on('click', function() { // Au clic sur un élément
@@ -24,6 +40,7 @@
             });
         </script>
     {% endblock %}
+
 
     <link rel="icon" type="image/x-icon" href="{{ asset('img/Dissidance_21.png') }}" />
 </head>
@@ -70,4 +87,5 @@
 {% endblock %}
 
 </body>
+
 </html>

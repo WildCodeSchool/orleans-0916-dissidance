@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use BackBundle\Entity\Party;
 use BackBundle\Form\PartyType;
+use BackBundle\Entity\Reservation;
 
 /**
  * Party controller.
@@ -39,13 +40,14 @@ class PartyController extends Controller
      * @Route("/new", name="party_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, Reservation $reservation)
     {
         $party = new Party();
         $form = $this->createForm('BackBundle\Form\PartyType', $party);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $party->setReservation($reservation);
             $em = $this->getDoctrine()->getManager();
             $em->persist($party);
             $em->flush();

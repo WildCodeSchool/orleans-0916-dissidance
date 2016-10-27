@@ -8,6 +8,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class PartyAdmin extends Admin{
     // Fields to be shown on create/edit forms
@@ -22,7 +23,6 @@ class PartyAdmin extends Admin{
             ->add('keyword')
             ->add('imgSlide')
             ->add('imgCover')
-            ->add('reservations')
         ;
     }
 
@@ -71,7 +71,7 @@ class PartyAdmin extends Admin{
             ->add('keyword')
             ->add('imgSlide')
             ->add('imgCover')
-            ->add('reservations')
+            ->add('reservation')
         ;
     }
 }

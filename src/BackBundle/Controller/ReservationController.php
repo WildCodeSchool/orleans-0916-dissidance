@@ -37,35 +37,6 @@ class ReservationController extends Controller
     }
 
     /**
-     * Creates a new Reservations entity.
-     *
-     * @Route("/new/{keyword}", name="reservation_new")
-     * @Method({"GET", "POST"})
-     * @ParamConverter("party", class="BackBundle:Party")
-     */
-    public function newAction(Request $request, Party $party)
-    {
-        $reservation = new Reservation();
-        $form = $this->createForm('BackBundle\Form\ReservationType', $reservation);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            //$mail = $mail->findOneBy(array('mail' => '$mail'));
-            $reservation->setParty($party);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($reservation);
-            $em->flush();
-
-            return $this->redirectToRoute('reservation_show', array('id' => $reservation->getId()));
-        }
-
-        return $this->render('reservation/new.html.twig', array(
-            'reservation' => $reservation,
-            'form' => $form->createView(),
-        ));
-
-    }
-
-    /**
      * Finds and displays a Reservation entity.
      *
      * @Route("/{id}", name="reservation_show")

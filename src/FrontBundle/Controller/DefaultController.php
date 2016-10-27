@@ -5,11 +5,15 @@ namespace FrontBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use BackBundle\Entity\Mail;
-use FrontBundle\Entity\Place;
+use BackBundle\Entity\Party;
+use BackBundle\Form\ReservationType;
+use BackBundle\Entity\Reservation;
 use Symfony\Component\HttpFoundation\Session\Session;
+
 
 class DefaultController extends Controller
 {
@@ -18,7 +22,13 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('FrontBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $parties = $em->getRepository('BackBundle:Party')->findAll();
+
+        return $this->render('FrontBundle:Default:index.html.twig', array(
+            'parties' => $parties,
+        ));
+
     }
 
     /**
@@ -35,6 +45,14 @@ class DefaultController extends Controller
     public function valid_mailAction()
     {
         return $this->render('FrontBundle:Default:valid.html.twig');
+    }
+
+    /**
+     * @Route("/tuile", name="tuile")
+     */
+    public function tuileAction()
+    {
+        return $this->render('FrontBundle:Default:tuile.html.twig');
     }
 
     /**
@@ -62,5 +80,10 @@ class DefaultController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+
+
+
+
 
 }
