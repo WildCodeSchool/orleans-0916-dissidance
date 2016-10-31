@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Reservation creation</h1>
 
     {{ form_start(form) }}
@@ -8,9 +8,4 @@
         <input type="submit" value="Create" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('reservation_index') }}">Back to the list</a>
-        </li>
-    </ul>
 {% endblock %}

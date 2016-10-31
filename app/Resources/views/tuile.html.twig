@@ -1,0 +1,40 @@
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" type="text/css" href="{{ asset('css/tuile.css') }}">
+
+
+
+    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-1 tuile">
+        <div class="thumbnail">
+            <img  class="thumbnail_img" src="{{ party.artist }}" alt="#">
+            <div class="caption">
+                <h3>{{ party.title }}</h3>
+                <h4>{{ party.artist }}</h4>
+                <input class="button_thumb" type="button" data-toggle="modal" data-target="#tuile{{ loop.index }}">
+            </div>
+        </div>
+
+        <!-- Modal -->
+
+        <div class="modal fade" id="tuile{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">{{ party.title }}</h4>
+                    </div>
+                    <div id="MainContent">
+                        <ul id="Gallery" class="gallery">
+                            <li><a href="{{ asset('img/D.VII.jpg') }}"><img src="{{ asset('img/D.VII.jpg') }}" alt="Image 001" /></a></li>
+                        </ul>
+                    </div>
+                    <div class="modal-body">
+                        {{ party.content }}
+                    </div>
+                    {{ party.soundcloud|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+

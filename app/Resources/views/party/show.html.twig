@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Party</h1>
 
     <table>
@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <th>Soundcloud</th>
-                <td>{{ party.soundcloud }}</td>
+                <td>{{ party.soundcloud | truncate(20, true, '...') }}</td>
             </tr>
             <tr>
                 <th>Keyword</th>

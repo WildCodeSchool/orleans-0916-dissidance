@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Reservation</h1>
 
     <table>
@@ -19,9 +19,6 @@
     <ul>
         <li>
             <a href="{{ path('reservation_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('reservation_edit', { 'id': reservation.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

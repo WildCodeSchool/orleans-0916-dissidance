@@ -1,0 +1,22 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block content %}
+    <h1>Reservation list</h1>
+
+    <table>
+        <thead>
+
+            <th>Nbtickets</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for party in reservations %}
+            <tr>
+                <td>{{ party.nbTickets }}</td>
+                <td>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

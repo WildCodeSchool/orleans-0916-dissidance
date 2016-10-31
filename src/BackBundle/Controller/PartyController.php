@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use BackBundle\Entity\Party;
 use BackBundle\Form\PartyType;
+use BackBundle\Entity\Reservation;
 
 /**
  * Party controller.

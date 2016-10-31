@@ -136,4 +136,18 @@ class MailController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     *
+     * @Route("/mail/list", name="mail_list")
+     * @Method({"GET"})
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $emails = $em->getRepository('BackBundle:Mail')->findAll();
+
+        return $this->render('mail/mailList.html.twig', array('emails' => $emails,));
+    }
+
 }

@@ -7,8 +7,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class DefaultController extends Controller
 {
+
+
     /**
-     * @Route("/")
+     * @Route("/adm", name="index_adm")
      */
     public function indexAction()
     {

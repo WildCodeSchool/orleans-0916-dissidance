@@ -38,17 +38,15 @@ class Reservation
      */
     private $party;
 
-    /**
-     * @return mixed
-     */
+
+
     public function getParty()
     {
         return $this->party;
     }
 
-    /**
-     * @param mixed $party
-     */
+
+
     public function setParty($party)
     {
         $this->party = $party;

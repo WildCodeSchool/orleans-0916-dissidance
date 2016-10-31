@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head id="home">
+    <meta charset="UTF-8" />
+    <title>{% block title %}ADM/DISSIDANCE{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/adm.css') }}">
+    {% endblock %}
+    {% block javascripts %}
+    <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+
+
+
+
+{% block body %}
+    {% block header %}
+        <a href="{{ path('index_adm') }}"><img class="logo" src="{{ asset('img/Dissidance_21.png') }}" alt=""></a>
+    {% endblock %}
+    {% block menu %}
+        <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand" href="#">D I S S I D A N C E &nbsp;&nbsp;&nbsp;&nbsp;/ &nbsp;&nbsp;&nbsp;&nbsp;B A C K &nbsp;&nbsp;&nbsp;&nbsp;O F F I C E</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-menubuilder">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    PARTIES
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="{{ path('party_index') }}">List</a></li>
+                                    <li><a href="{{ path('party_new') }}">Create</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    RESERVATIONS
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a href="{{ path('reservation_index') }}">List</a></li>
+                                    <li><a href="{{ path('mail_new') }}">Add</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    EMAILS
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                                    <li><a href="{{ path('mail_index') }}">List</a></li>
+                                    <li><a href="{{ path('mail_list') }}">GetList</a></li>
+                                    <li><a href="{{ path('mail_new') }}">Add</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% block content %}
+<div class="container">
+                            <a href="{{ path('party_index') }}" class="tuile tuile1">PARTIES</a>
+                            <a href="{{ path('reservation_index') }}" class="tuile tuile2">RESERVATIONS</a>
+                            <a href="{{ path('mail_index') }}" class="tuile tuile3">EMAILS</a>
+</div>
+    {% endblock %}
+
+    {% block footer %}{% endblock %}
+
+{% endblock %}
+
+</body>
+
+</html>
+

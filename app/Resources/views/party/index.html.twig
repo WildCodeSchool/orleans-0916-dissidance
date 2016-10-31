@@ -1,35 +1,28 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Party list</h1>
-
+<div class="content">
     <table>
         <thead>
             <tr>
+
                 <th>Id</th>
                 <th>Title</th>
                 <th>Artist</th>
                 <th>Place</th>
-                <th>Content</th>
-                <th>Soundcloud</th>
-                <th>Keyword</th>
-                <th>Imgslide</th>
-                <th>Imgcover</th>
-                <th>Actions</th>
+                <th>Action</th>
+
             </tr>
         </thead>
         <tbody>
-        {% for party in party %}
+        {% for party in party|reverse %}
             <tr>
-                <td><a href="{{ path('party_show', { 'id': party.id }) }}">{{ party.id }}</a></td>
-                <td>{{ party.title }}</td>
-                <td>{{ party.artist }}</td>
-                <td>{{ party.place }}</td>
-                <td>{{ party.content }}</td>
-                <td>{{ party.soundcloud }}</td>
-                <td>{{ party.keyword }}</td>
-                <td>{{ party.imgSlide }}</td>
-                <td>{{ party.imgCover }}</td>
+
+                <td class="td_id"><a href="{{ path('party_show', { 'id': party.id }) }}">{{ party.id }}</a></td>
+                <td class="td_title">{{ party.title }}</td>
+                <td class="td_artist">{{ party.artist }}</td>
+                <td class="td_plade">{{ party.place }}</td>
                 <td>
                     <ul>
                         <li>
@@ -46,8 +39,9 @@
     </table>
 
     <ul>
-        <li>
+        <li class="create">
             <a href="{{ path('party_new') }}">Create a new entry</a>
         </li>
     </ul>
+</div>
 {% endblock %}

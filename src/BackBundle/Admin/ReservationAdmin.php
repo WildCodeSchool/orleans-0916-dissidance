@@ -8,6 +8,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ReservationAdmin extends Admin
 {
@@ -16,8 +17,6 @@ class ReservationAdmin extends Admin
     {
         $formMapper
             ->add('nbTickets')
-            ->add('mail')
-            ->add('party')
         ;
     }
 
@@ -25,7 +24,7 @@ class ReservationAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('mail')
+            ->add('mail', EntityType::class, array('class' => 'Backbundle:Mail'))
         ;
     }
 

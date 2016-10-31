@@ -1,0 +1,109 @@
+body {
+    text-align: center;
+    margin-top: 20vh;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 70px;
+}
+
+.logo {
+    height: 10vh;
+    margin-left: -5vh;
+    top:10px;
+    position: absolute;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top:200px;
+}
+
+.tuile {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 3vmin;
+    background-color: rgba(224, 213, 213, 1);
+    padding: 150px 0px 150px 0px;
+    border-radius: 20px;
+    width: 25%;
+    border: 0;
+
+}
+
+.tuile:hover {
+    background: rgba(0,0,0,0);
+    color: #3a7999;
+    box-shadow: inset 0 0 0 3px #3a7999;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* menu bootstrap */
+
+.navbar {
+    position: absolute;
+    top: 12vh;
+    width: 100%;
+}
+
+.dropdown {
+    margin-top:7px;
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(8, 6, 6, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 19px;
+    background-color: rgba(224, 213, 213, 1);
+    border-width: 0px;
+    border-radius: 0px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+th {
+    text-align: center;
+    padding: 0 3vw 5vh 3vw;
+}
+
+tr {
+    border: 2px;
+    border-color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.create {
+    margin-top: 50px;
+}
+
+label {
+
+}
+
+input {
+    width: 200px;
+    margin-left: 20px;
+}
+
+textarea {
+    width: 500px;
+    height: 300px;
+    margin-left: 20px;
+}

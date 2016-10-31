@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}{{ parent() }}<link rel="stylesheet" href="{{ asset('css/contact.css') }}"> {% endblock %}
+
+{% block title %}Contact{% endblock%}
+
+{% block home_link %}
+    {{ path('home') }}
+{% endblock %}
+
+{% block about_link %}
+    {{ path('home') ~ '#about_dissidance' }}
+{% endblock %}
+
+{% block intimate_link %}
+    {{ path('home') ~ '#intimate_clubbing' }}
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1 class="contact_title">I HAVE A RIGHT PLACE FOR YOU</h1>
+    </header>
+
+    {% for flash_message in app.session.flashBag.get('contact-notice') %}
+        <div class="contact-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <input type="submit" value="Send" />
+    {{ form_end(form) }}
+
+    </form>
+
+{% endblock %}

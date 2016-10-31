@@ -37,32 +37,27 @@ class ReservationController extends Controller
     }
 
     /**
-     * Creates a new Reservations entity.
+     * Lists all Reservation by Party entities.
      *
-     * @Route("/new/{keyword}", name="reservation_new")
-     * @Method({"GET", "POST"})
-     * @ParamConverter("party", class="BackBundle:Party")
+     * @Route("/list", name="reservation_list")
+     * @Method("GET")
      */
-    public function newAction(Request $request, Party $party)
+    public function listResaAction()
     {
-        $reservation = new Reservation();
-        $form = $this->createForm('BackBundle\Form\ReservationType', $reservation);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            //$mail = $mail->findOneBy(array('mail' => '$mail'));
-            $reservation->setParty($party);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($reservation);
-            $em->flush();
+        $em = $this->getDoctrine()->getManager();
+        $party = $em ->getRepository('BackBundle:Party')->findAll();
 
-            return $this->redirectToRoute('reservation_show', array('id' => $reservation->getId()));
+      /*  for ($i=0, $i<count($party), $i=$party){
+        $reservations = $em->getRepository('BackBundle:Reservation')->findBy('party' => $i);
+
+        $nbrResa=count('id');
+        for ($i=0; $i<$nbrResa; $i++) {
+
         }
-
-        return $this->render('reservation/new.html.twig', array(
-            'reservation' => $reservation,
-            'form' => $form->createView(),
+*/
+        return $this->render('reservation/list.html.twig', array(
+            'reservations' => $reservations,
         ));
-
     }
 
     /**
@@ -143,4 +138,6 @@ class ReservationController extends Controller
             ->getForm()
         ;
     }
+
+
 }
