@@ -3,8 +3,10 @@
 namespace BackBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class PartyType extends AbstractType
 {
@@ -12,6 +14,8 @@ class PartyType extends AbstractType
      * @param FormBuilderInterface $builder
      * @param array $options
      */
+
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -21,9 +25,12 @@ class PartyType extends AbstractType
             ->add('content')
             ->add('soundcloud')
             ->add('keyword')
-            ->add('imgSlide')
-            ->add('imgCover')
-        ;
+            ->add('imgCover', FileType::class)
+            ->add('imgSlides', FileType::class, array(
+                'multiple' => true,
+                'data_class' => null,
+            ));
+
     }
     
     /**

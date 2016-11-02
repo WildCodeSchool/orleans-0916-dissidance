@@ -15,15 +15,32 @@
 
     <div class="container-fluid">
         <div id="about_dissidance" class="about_dissidance">
-            <h2 style="font-size: 25px">A B O U T&nbsp;&nbsp;&nbsp;&nbsp;D I S S I D A N C E</h2>
-            <div class="row_about">
-                <div class="col-lg-offset-1 col-lg-4 col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-4 col-xs-offset-1 col-xs-4 ">
-                    <p class="about_content">Cabillona locata abunde locata concitores Cabillona perlato opera in opera per castra Eusebius Galli ut fiduciam cibo cibo diligens militum genere genere astute hoc ne salus est Galli genere diligens hocque hocque dilato cogitabatur cogitabatur perlato consenuit distributo tumor distributo abunde in astute hocque ut acueret et hocque per opera dilato est die cubiculi quo ut cogitabatur Galli die praefecti.</p>
+            <h2 class="section">A B O U T&nbsp;&nbsp;&nbsp;&nbsp;D I S S I D A N C E</h2>
+            <div class="row">
+                <div class="align_div">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about">
+                        <p class="about_content">Dissidance<br/>is firstly a little project<br/>that aims at joining music lovers seeking for qualitative atmospheres.<br/>Warmth, coziness, quality, closeness, good intentions and, consequently, social ties,<br/>are at the heart of this little volatile platform.</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about">
+                        <img class="about_img photo_sepia" src="{{ asset('img/platine2.jpg') }}">
+                    </div>
                 </div>
-                <div class="col-lg-offset-2 col-lg-4 col-md-offset-2 col-md-4 col-sm-offset-2 col-lsm-4 col-xs-offset-2 col-xs-4 ">
+                <div class="align_div">
+                    <div class="col-lg-push-6 col-lg-6 col-md-push-6 col-md-6 col-sm-12 col-xs-12 about">
+                        <p class="about_content">Mostly happening in private apartments and off-locations,<br/>this format allows us to bring back -unannounced- dj's and selectors to intimate spaces where they immediately feel home, real and free to deliver any kind of warm vibes.</p>
 
-                    <img id="ph1" src="{{ asset('img/ph1.jpg') }}">
-                    <img id="ph2" src="{{ asset('img/ph2.jpg') }}">
+                    </div>
+                    <div class="col-lg-pull-6 col-lg-6 col-md-pull-6 col-md-6 col-sm-12 col-xs-12 about">
+                        <img class="about_img photo_gray_scale" src="{{ asset('img/ph2.jpg') }}">
+                    </div>
+                </div>
+                <div class="align_div">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about">
+                        <p class="about_content">Animated by the under-the-radar and DIY spirit,<br/>invitations are only sent by emails to a word-of-mouth-built-contact list full of enthusiastic music lovers enjoying muted yet groovy ambiences.<br/><br/>Capacity is always limited, and those attending are always properly taken care of.</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about">
+                        <img class="about_img photo_gray_scale" src="{{ asset('img/ph1.jpg') }}">
+                    </div>
                 </div>
             </div>
             <img id="logo_rotate1" src="{{ asset('img/Dissidance_21.png') }}">
@@ -37,7 +54,7 @@
                                 Intimate clubbing
     <================================================================-->
     <div id="intimate_clubbing" class="intimate_clubbing">
-        <h2 style="font-size: 25px; text-align: center;">C L U B B I N G&nbsp;&nbsp;&nbsp;&nbsp;I N T I M E</h2>
+        <h2 class="section">C L U B B I N G&nbsp;&nbsp;&nbsp;&nbsp;I N T I M E</h2>
 
         <div class="container-fluid intimate_clubbing">
             <div class="row_party">
@@ -47,8 +64,11 @@
                 <================================================================-->
 
                 {% for party in parties|reverse %}
+                    <div class="range">
                     {%  include 'tuile.html.twig' %}
+                    </div>
                 {% endfor %}
+                <input type="range">
 
             </div>
         </div>

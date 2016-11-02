@@ -45,18 +45,21 @@ class ReservationController extends Controller
     public function listResaAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $party = $em ->getRepository('BackBundle:Party')->findAll();
+        $parties = $em ->getRepository('BackBundle:Party')->findAll();
+        foreach ($parties as $party){
+            $reservations = $party -> getReservations();
+            //var_dump($reservations);
+            $party_id = $party->getId();
+            $count[$party_id]=0;
+            foreach ($reservations as $reservation){
 
-      /*  for ($i=0, $i<count($party), $i=$party){
-        $reservations = $em->getRepository('BackBundle:Reservation')->findBy('party' => $i);
-
-        $nbrResa=count('id');
-        for ($i=0; $i<$nbrResa; $i++) {
-
+                $count[$party_id]+=$reservation -> getNbTickets();
+            }
         }
-*/
+
         return $this->render('reservation/list.html.twig', array(
-            'reservations' => $reservations,
+            'parties' => $parties,
+            'count' => $count,
         ));
     }
 

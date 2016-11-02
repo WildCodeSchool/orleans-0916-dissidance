@@ -8,8 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/tuile.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/photoswipe.css.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Special+Elite|Cutive+Mono" rel="stylesheet">
     {% endblock %}
     {% block javascripts %}
         <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
@@ -18,16 +17,6 @@
 
         <script type="text/javascript" src="{{ asset('js/lib/klass.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/code.photoswipe-3.0.5.min.js') }}"></script>
-        <script type="text/javascript">
-            (function(window, PhotoSwipe){
-                document.addEventListener('DOMContentLoaded', function(){
-                    var
-                            options = {},
-                            instance = PhotoSwipe.attach( window.document.querySelectorAll('#Gallery a'), options );
-                }, false);
-            }(window, window.Code.PhotoSwipe));
-        </script>
-
 
         <script>
             $(document).ready(function() {
@@ -66,11 +55,11 @@
         <div class="burger">
             <img id="icon" src="{{ asset('img/burger.png') }}">
             <div id="nav">
-                <a class="js-scrollTo" id="lili" href="{% block home_link %}#home{% endblock %}">Home</a><span class="slash">/</span>
-                <a class="js-scrollTo" href="{% block about_link %}#about_dissidance{% endblock %}">About Dissidance</a><span class="slash">/</span>
-                <a class="js-scrollTo" href="{% block intimate_link %}#intimate_clubbing{% endblock %}">Intimate clubbing</a><span class="slash">/</span>
+                <a class="js-scrollTo" href="{% block home_link %}#home{% endblock %}">Home</a><span>/</span>
+                <a class="js-scrollTo" href="{% block about_link %}#about_dissidance{% endblock %}">About Dissidance</a><span>/</span>
+                <a class="js-scrollTo" href="{% block intimate_link %}#intimate_clubbing{% endblock %}">Intimate clubbing</a><span>/</span>
                 <a class="js-scrollTo" href="{{ path('support') }}">Support</a><span class="slash">/</span>
-                <a class="js-scrollTo" href="{{ path('contactPFU') }}">I have the right place for you</a><span class="slash">/</span>
+                <a class="js-scrollTo" href="{{ path('contactPFU') }}">I have the right place for you</a><span>/</span>
                 <a class="js-scrollTo" href="{{ path('contact') }}">Contact</a>
             </div>
         </div>
@@ -86,8 +75,11 @@
     {% endfor %}{% endblock %}
     {% block content %}{% endblock %}
     {% block footer %}
+        <div class="footer">
         {{  render(url('new_mail'))  }}
-        <div id="footer"></div>
+            <div class="line"></div>
+        </div>
+
     {% endblock %}
 {% endblock %}
 

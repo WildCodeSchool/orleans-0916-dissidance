@@ -1,7 +1,9 @@
-
+<div class="mail_entry">
     <form action="{{ path('valid_mail') }}" method="POST" name="formmail">
+        {{ form_start(form) }}<input class="mail_button" type="submit" name="valid" value="CREATE" />
     {{ form_widget(form) }}
-    <input type="submit" name="valid" value="CREATE" />
-    {{ form_end(form) }}
 
+    {{ form_end(form) }}
+        </form>
+</div>
 

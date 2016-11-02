@@ -48,7 +48,7 @@ class ContactPFU
     }
 
     /**
-     * @return array
+     * @return string
      */
     public function getPicture()
     {
@@ -56,7 +56,7 @@ class ContactPFU
     }
 
     /**
-     * @param array $picture
+     * @param string $picture
      */
     public function setPicture($picture)
     {

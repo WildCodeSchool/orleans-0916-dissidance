@@ -3,6 +3,7 @@
 namespace BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Party
@@ -12,13 +13,18 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Party
 {
-    // my code
     /**
      * @ORM\OneToMany(targetEntity="Reservation", mappedBy="party")
      */
-    private $reservation;
+    private $reservations;
 
-    // end of my code
+    /**
+     * @var ImgSlide
+     *
+     * @ORM\OneToMany(targetEntity="ImgSlide", mappedBy="party",  cascade={"persist"})
+     */
+    private $imgSlides;
+
 
     /**
      * @var int
@@ -71,12 +77,6 @@ class Party
      */
     private $keyword;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="imgSlide", type="string", length=300)
-     */
-    private $imgSlide;
 
     /**
      * @var string
@@ -89,7 +89,7 @@ class Party
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -112,7 +112,7 @@ class Party
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -135,7 +135,7 @@ class Party
     /**
      * Get artist
      *
-     * @return string 
+     * @return string
      */
     public function getArtist()
     {
@@ -158,7 +158,7 @@ class Party
     /**
      * Get place
      *
-     * @return string 
+     * @return string
      */
     public function getPlace()
     {
@@ -181,7 +181,7 @@ class Party
     /**
      * Get content
      *
-     * @return string 
+     * @return string
      */
     public function getContent()
     {
@@ -204,7 +204,7 @@ class Party
     /**
      * Get soundcloud
      *
-     * @return string 
+     * @return string
      */
     public function getSoundcloud()
     {
@@ -227,35 +227,13 @@ class Party
     /**
      * Get keyword
      *
-     * @return string 
+     * @return string
      */
     public function getKeyword()
     {
         return $this->keyword;
     }
 
-    /**
-     * Set imgSlide
-     *
-     * @param string $imgSlide
-     * @return Party
-     */
-    public function setImgSlide($imgSlide)
-    {
-        $this->imgSlide = $imgSlide;
-
-        return $this;
-    }
-
-    /**
-     * Get imgSlide
-     *
-     * @return string 
-     */
-    public function getImgSlide()
-    {
-        return $this->imgSlide;
-    }
 
     /**
      * Set imgCover
@@ -280,24 +258,84 @@ class Party
         return $this->imgCover;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImgSlides()
+    {
+        return $this->imgSlides;
+    }
 
+    /**
+     * @param mixed $imgSlides
+     */
+    public function setImgSlides($imgSlides)
+    {
+        $this->imgSlides = $imgSlides;
+    }
 
     /**
      * @return mixed
      */
-    public function getReservation()
+    public function getReservations()
     {
-        return $this->reservation;
+        return $this->reservations;
     }
 
     /**
-     * @param mixed $reservation
+     * @param mixed $reservations
      */
-    public function setReservation($reservation)
+    public function setReservations($reservations)
     {
-        $this->reservation = $reservation;
+        $this->reservations = $reservations;
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->reservations = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->imgSlides = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+    /**
+     * Add imgSlides
+     *
+     * @param \BackBundle\Entity\ImgSlide $imgSlides
+     * @return Party
+     */
+    public function addImgSlide(\BackBundle\Entity\ImgSlide $imgSlides)
+    {
+        $this->imgSlides[] = $imgSlides;
+
+        return $this;
+    }
+
+    /**
+     * Remove imgSlides
+     *
+     * @param \BackBundle\Entity\ImgSlide $imgSlides
+     */
+    public function removeImgSlide(\BackBundle\Entity\ImgSlide $imgSlides)
+    {
+        $this->imgSlides->removeElement($imgSlides);
+    }
 
 }

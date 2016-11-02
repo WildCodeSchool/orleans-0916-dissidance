@@ -51,9 +51,9 @@
         <li>
             <a href="{{ path('party_edit', { 'id': party.id }) }}">Edit</a>
         </li>
-        <li>
+        <li class="delete">
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-danger" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

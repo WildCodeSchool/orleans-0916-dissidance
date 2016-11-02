@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block menu %}{% endblock %}
+{% block body %}
+
+    {% block css %}
+        <link rel="stylesheet" href="{{ asset('css/resa.css') }}">
+        {% endblock %}
+
+    <h1>Party address</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ place }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

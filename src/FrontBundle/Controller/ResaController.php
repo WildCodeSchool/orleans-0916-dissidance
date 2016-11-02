@@ -60,6 +60,8 @@ class ResaController extends Controller
      */
     public function getAction(Party $party)
     {
-        return $party->getPlace();
+        $place = $party->getPlace();
+
+        return $this->render('reservation/place.html.twig', array('place' => $place));
     }
 }

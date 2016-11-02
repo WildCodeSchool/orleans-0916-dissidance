@@ -17,7 +17,7 @@ class ContactPfuType extends AbstractType
             ->add('name')
             ->add('email', 'email')
             ->add('message', 'textarea')
-            ->add('picture', FileType::class, array('multiple' => true, 'data_class' => null));
+            ->add('picture', FileType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

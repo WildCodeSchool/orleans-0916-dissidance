@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use BackBundle\Entity\Party;
 use BackBundle\Form\PartyType;
 use BackBundle\Entity\Reservation;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Party controller.
@@ -47,6 +48,29 @@ class PartyController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //upload imgCover
+
+            $file = $party->getImgCover();
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('uploadCover_directory'),
+                $fileName
+            );
+
+            foreach($party->getImgSlides() as $file)
+            {
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                $file->move(
+                    $this->getParameter('uploadCover_directory'),
+                    $fileName
+                );
+
+            }
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($party);
             $em->flush();

@@ -35,7 +35,7 @@ class ContactController extends Controller
             if ($form->isValid()) {
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Contact Dissidance from Dissi.dance')
-                    ->setFrom('enquiries@symblog.co.uk')
+                    ->setFrom('Dissidance@site.com')
                     ->setTo('chapellequentin@live.fr')
                     ->setBody($this->renderView('contact/sentMail.txt.twig', array('contact' => $contact)));
                 $this->get('mailer')->send($message);
