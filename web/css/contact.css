@@ -1,13 +1,66 @@
-.contact-notice { text-align: center; padding: 10px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 10px; width: 30%; margin-left: auto; margin-right: auto; border-radius: 5px;}
-form.contact { font-size: 16px; }
-form.contact div { clear: left; margin-bottom: 10px; }
-form.contact label { text-align: center; width: 100px; font-weight: bold; vertical-align: top;}
-form.contact input[type="text"],
-form.contact input[type="email"]
-{ width: 500px; line-height: 26px; font-size: 20px; min-height: 26px; }
-form.contact textarea { width: 500px; height: 150px; line-height: 26px; font-size: 20px; }
-form.contact input[type="submit"] { width: 200px; line-height: 26px; font-size: 20px; min-height: 26px; }
-form.contact ul li { color: #ff0000; margin-bottom: 5px; }
+h1 {
+    font-family: 'Cutive Mono', serif;
+}
+
+label {
+    font-family: 'Special Elite', serif;
+}
+
+.contact-notice {
+    text-align: center;
+    padding: 10px;
+    background: #DFF2BF;
+    border: 1px solid;
+    color: #4F8A10;
+    margin-bottom: 10px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+form.contact {
+    font-size: 16px;
+}
+
+form.contact div {
+    clear: left;
+    margin-bottom: 10px;
+}
+
+form.contact label {
+    text-align: center;
+    width: 100px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+form.contact input[type="text"], form.contact input[type="email"] {
+    width: 500px;
+    line-height: 26px;
+    font-size: 20px;
+    min-height: 26px;
+    font-family: 'Cutive Mono', serif;
+}
+
+form.contact textarea {
+    width: 500px;
+    height: 150px;
+    line-height: 26px;
+    font-size: 20px;
+}
+
+form.contact input[type="submit"] {
+    width: 200px;
+    line-height: 26px;
+    font-size: 20px;
+    min-height: 26px;
+}
+
+form.contact ul li {
+    color: #ff0000;
+    margin-bottom: 5px;
+}
 
 body {
     margin-top: 10vh;
@@ -15,4 +68,17 @@ body {
 
 .contact_title {
     margin-bottom: 2vh;
+}
+
+input[type=submit] {
+    font-family: 'Cutive Mono', serif;
+}
+
+input[type=file] {
+    font-family: 'Special Elite', serif;
+    position: relative;
+}
+
+input[id=contactPfu_picture] {
+    font-family: 'Special Elite', serif;
 }

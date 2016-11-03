@@ -1,4 +1,18 @@
+
+/*POLICE POUR LES INTITULES DE FORMULAIRES*/
+
 label {
     font-family: 'Special Elite', serif;
 }
 
+/*POLICE POUR LES BOUTONS SUBMIT*/
+
+input[type=submit] {
+    font-family: 'Special Elite', serif;
+}
+
+/*MODIFICATION DU BODY*/
+
+div.container-fluid {
+    height: 50vh;
+}

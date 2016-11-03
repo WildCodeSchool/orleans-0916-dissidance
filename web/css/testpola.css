@@ -1,10 +1,32 @@
 /*BLOC ABOUT SUPPORT*/
 
-.title {
+.titre_support {
+    margin-top: 20vh;
+}
+
+.titre_vinyle {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+}
+
+
+#platine1 {
+    margin-bottom: -40vh;
+}
+
+@media screen and (max-device-width: 800px) {
+    #tampon1 {
+        margin-top: -35vh;
+    }
+}
+
+@media screen and (min-device-width: 980px) {
+    #tampon1 {
+        margin-top: 10vh;
+    }
 }
 
 .about_vinyle {
-    padding-top: 20vh;
     min-height: 100vh;
     text-align: center;
     font-size: 20px;
@@ -12,11 +34,37 @@
 }
 
 .row_about {
-    margin-top: 100px;
-    margin-bottom: 200px;
+    margin-top: 10vh;
+    margin-bottom: 50vh;
 }
-.about_support_1 {
-    text-align: justify;
+
+.row_vinyle {
+    margin-bottom: 50vh;
+}
+
+.row_gallery {
+    margin-top: -10vh;
+}
+
+.row_gallery_2 {
+    margin-top: 20vh;
+}
+
+#platine2 {
+    margin-top: -35vh;
+}
+
+.form {
+    color: inherit;
+}
+
+.about_support {
+    font-size: 18px;
+}
+
+.about_content {
+    font-size: 18px;
+    margin-top: 5vh;
 }
 
 div.polaroid-1 {
@@ -30,14 +78,6 @@ div.polaroid-1 {
 }
 
 /*BLOC GALLERY T-SHIRTS*/
-
-.row_gallery {
-    margin-top: 20vh;
-}
-
-.row_gallery_2 {
-    margin-top: 20vh;
-}
 
 div.polaroid-2 {
     max-width: 100%;
@@ -66,18 +106,18 @@ div.container {
 }
 
 .img-responsive {
-    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-    filter: grayscale(100%);
+    -webkit-filter: sepia(100%); /* Chrome, Safari, Opera */
+    filter: sepia(100%);
     -webkit-transition: all 0.9 s ease;
+    transition: all 0.9s ease-in-out 0s;
+    -moz-transition: all 0.9s ease-in-out 0s;
+    -o-transition: all 0.9s ease-in-out 0s;
 }
 
 .img-responsive:hover {
     filter: none;
     -webkit-transition: all 0.9s ease;
-}
-
-@media screen and (max-width: 980px) {
-    div.polaroid-2,div.polaroid-3{
-        display: none;
-    }
+    transition: all 0.9s ease-in-out 0s;
+    -moz-transition: all 0.9s ease-in-out 0s;
+    -o-transition: all 0.9s ease-in-out 0s;
 }

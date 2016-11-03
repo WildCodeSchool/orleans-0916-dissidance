@@ -27,12 +27,32 @@
         </div>
     {% endfor %}
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <div class="container" style="width: 40%;">
 
-    <input type="submit" value="Send" />
-    {{ form_end(form) }}
+        {{ form_start(form) }}
 
-    </form>
+
+        {{form_label(form.name, 'Name')}}
+        {{form_widget(form.name, {'attr':{'class':'form-control'}}) }}
+        {{form_errors(form.name)}}
+
+        {{form_label(form.email, 'E-mail')}}
+        {{form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+        {{form_errors(form.email)}}
+
+        {{form_label(form.message, 'Message')}}
+        {{form_widget(form.message, {'attr':{'class':'form-control'}}) }}
+        {{form_errors(form.message)}}
+
+        {{form_label(form.picture, 'Picture')}}
+        {{form_widget(form.picture)}}
+        {{form_errors(form.picture)}}
+
+        <div class="form-group"><input type="submit" value="Send" /></div>
+
+        {{ form_end(form) }}
+
+
+    </div>
 
 {% endblock %}
