@@ -76,6 +76,7 @@ body {
     }
 }
 
+
 .about_vinyle {
     min-height: 100vh;
     text-align: justify;
@@ -170,4 +171,8 @@ div.container {
     transition: all 0.9s ease-in-out 0s;
     -moz-transition: all 0.9s ease-in-out 0s;
     -o-transition: all 0.9s ease-in-out 0s;
+}
+
+a {
+    color: inherit;
 }
