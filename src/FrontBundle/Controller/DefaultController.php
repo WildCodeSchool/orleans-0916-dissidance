@@ -39,6 +39,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/Legal", name="legal_mentions")
+     */
+    public function mentionsAction()
+    {
+        return $this->render('FrontBundle:Default:mentions.html.twig');
+    }
+
+    /**
      * @Route("/valid/mail", name="valid_mail")
      */
     public function valid_mailAction()

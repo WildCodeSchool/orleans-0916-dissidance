@@ -9,8 +9,8 @@
             <img  class="thumbnail_img" src="{{ asset('uploads/imgCover/'~party.imgCover) }}" alt="#">
             <div class="caption">
                 <div class="party_titles">
-                    <h3>{{ party.title }}</h3>
-                    <h4>{{ party.artist }}</h4>
+                    <h3 class="font_1">{{ party.title }}</h3>
+                    <h4 class="font_1">{{ party.artist }}</h4>
                 </div>
                 <img class="ticket" src="{{ asset('img/stamp.png') }}">
 
@@ -25,10 +25,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">{{ party.title }}</h4>
+                        <h4 class="modal-title font_1" id="myModalLabel">{{ party.title }}</h4>
                     </div>
                                     <img class="img-responsive img_modal" src="{{ asset('uploads/imgCover/'~party.imgCover) }}" alt="...">
-                    <div class="modal-body txt_modal">
+                    <div class="modal-body txt_modal font_2">
                         {{ party.content }}
                     </div>
                     {{ party.soundcloud|raw }}

@@ -72,17 +72,18 @@
     {% block content %}{% endblock %}
     {% block footer %}
         <div id="footer" class="footer">
+            <div class="first-line"></div>
             <div class="footer_section">
-                <a class="js-scrollTo" href="#home"><img class="scroll_top" src="{{ asset('img/up.png') }}"></a>
+                <a class="js-scrollTo" href="#home"><img class="scroll_top" src="{{ asset('img/down.png') }}"></a>
             </div>
             <div class="line"></div>
             <div class="footer_section">
                 {{  render(url('new_mail'))  }}
             </div>
             <div class="line"></div>
-            <a class="Legal_notices" href="">Legal notices</a>
+            <a target="blank" class="Legal_notices" href="{{ path('legal_mentions') }}">Legal notices</a>
         </div>
-        <div class="last-line"></div>
+
 
 
     {% endblock %}
