@@ -5,19 +5,14 @@
     <title>{% block title %}D I S S I D A N C E{% endblock %}</title>
 
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/tuile.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Special+Elite|Cutive+Mono" rel="stylesheet">
     {% endblock %}
     {% block javascripts %}
         <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
-
-        <script type="text/javascript" src="{{ asset('js/lib/klass.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/code.photoswipe-3.0.5.min.js') }}"></script>
-
+        <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
         <script>
             $(document).ready(function() {
                 $('.js-scrollTo').on('click', function() { // Au clic sur un élément
@@ -75,10 +70,19 @@
     {% endfor %}{% endblock %}
     {% block content %}{% endblock %}
     {% block footer %}
-        <div class="footer">
-        {{  render(url('new_mail'))  }}
+        <div id="footer" class="footer">
+            <div class="footer_section">
+                <a class="js-scrollTo" href="#home"><img class="scroll_top" src="{{ asset('img/up.png') }}"></a>
+            </div>
             <div class="line"></div>
+            <div class="footer_section">
+                {{  render(url('new_mail'))  }}
+            </div>
+            <div class="line"></div>
+            <a class="Legal_notices" href="">Legal notices</a>
         </div>
+        <div class="last-line"></div>
+
 
     {% endblock %}
 {% endblock %}
