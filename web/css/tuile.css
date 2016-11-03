@@ -59,17 +59,26 @@ iframe #document html body .widget .cookiePolicy {
 }
 
 .img_modal {
+
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    width: 350px;
+    width: 400px;
 }
 
 .txt_modal {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 0 10% 3% 10%;
 }
 
 .modal-dialog {
-    max-width: 400px;
+    max-width: 600px;
+}
+
+
+.font_1 {
+    font-family: 'special elite', serif;
+}
+
+.font_2 {
+    font-family: 'Cutive Mono', monospace;
 }
