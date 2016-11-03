@@ -1,32 +1,120 @@
-
-    /*BLOC ABOUT SUPPORT*/
-
-.title {
-    padding-bottom: 15vh;
+/*BLOC ABOUT SUPPORT*/
+body {
+    font-family: 'Cutive Mono', serif;
+}
+.titre_support {
+    margin-top: 20vh;
 }
 
-.about_support {
-    padding-top: 10vh;
-    min-height: 100vh;
-    text-align: center;
-    font-size: 20px;
-    max-height: 100%;
+.titre_vinyle {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+}
+
+
+#platine1 {
+    margin-bottom: -40vh;
+}
+
+@media screen and (min-device-width: 360px) {
+    #tampon1 {
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (min-device-width: 768px) {
+    #tampon1 {
+        margin-top: 15vh;
+    }
+}
+
+@media screen and (min-device-width: 800px) {
+    #tampon1 {
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (min-device-width: 980px) {
+    #tampon1 {
+        margin-top: 7vh;
+    }
+}
+
+@media screen and (min-device-width: 768px) {
+    #platine2 {
+        margin-top: 12vh;
+    }
+}
+
+@media screen and (min-device-width: 800px) {
+    #platine2 {
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (min-device-width: 980px) {
+    #platine2 {
+        margin-top: 7vh;
+    }
+}
+
+@media screen and (min-device-width: 768px) {
+    #platine1 {
+        margin-top: 12vh;
+    }
+}
+
+@media screen and (min-device-width: 800px) {
+    #platine1 {
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (min-device-width: 980px) {
+    #platine1 {
+        margin-top: 7vh;
+    }
 }
 
 .about_vinyle {
-    padding-top: 20vh;
     min-height: 100vh;
-    text-align: center;
+    text-align: justify;
     font-size: 20px;
     max-height: 100%;
 }
 
 .row_about {
-    margin-top: 100px;
-    margin-bottom: 200px;
+    margin-top: 10vh;
+    margin-bottom: 50vh;
 }
-.about_support_1 {
-    text-align: justify;
+
+#vinyle {
+    margin-top: 20vh;
+}
+
+.row_vinyle {
+    margin-bottom: 20vh;
+}
+
+.row_gallery {
+    margin-top: 10vh;
+}
+
+.row_gallery_2 {
+    margin-top: 30vh;
+}
+
+.form {
+    color: inherit;
+}
+
+.about_support {
+    font-size: 18px;
+}
+
+.about_content {
+    font-size: 18px;
+    margin-top: 5vh;
 }
 
 div.polaroid-1 {
@@ -39,15 +127,7 @@ div.polaroid-1 {
     transform: rotate(7deg);
 }
 
-    /*BLOC GALLERY T-SHIRTS*/
-
-.row_gallery {
-    margin-top: 20vh;
-}
-
-.row_gallery_2 {
-    margin-top: 20vh;
-}
+/*BLOC GALLERY T-SHIRTS*/
 
 div.polaroid-2 {
     max-width: 100%;
@@ -69,6 +149,7 @@ div.polaroid-3 {
     transform: rotate(10deg);
 }
 
+
 div.container {
     text-align: center;
     padding: 35px 20px;
@@ -78,39 +159,15 @@ div.container {
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
     filter: grayscale(100%);
     -webkit-transition: all 0.9 s ease;
+    transition: all 0.9s ease-in-out 0s;
+    -moz-transition: all 0.9s ease-in-out 0s;
+    -o-transition: all 0.9s ease-in-out 0s;
 }
 
 .img-responsive:hover {
     filter: none;
     -webkit-transition: all 0.9s ease;
-}
-
-div.polaroid_1 {
-    width: 500px;
-    padding: 10px 10px 50px 10px;
-    border: 1px solid #BFBFBF;
-    background-color: white;
-    box-shadow: 10px 10px 5px #aaaaaa;
-}
-
-div.polaroid_2 {
-    width: 294px;
-    padding: 10px 10px 50px 10px;
-    border: 1px solid #BFBFBF;
-    background-color: white;
-    box-shadow:10px 10px 5px #aaaaaa;
-}
-
-div.rotate_right {
-    float: left;
-    -ms-transform: rotate(-7deg); /*IE 9 */
-    -webkit-transform: rotate(-7deg); /* Safari */
-    transform: rotate(-7deg);
-}
-
-div.rotate_left {
-    float: left;
-    -ms-transform: rotate(8deg); /*IE 9 */
-    -webkit-transform: rotate(8deg); /* Safari */
-    transform: rotate(8deg);
+    transition: all 0.9s ease-in-out 0s;
+    -moz-transition: all 0.9s ease-in-out 0s;
+    -o-transition: all 0.9s ease-in-out 0s;
 }
