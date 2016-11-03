@@ -1,9 +1,11 @@
-<div class="mail_entry">
-    <form action="{{ path('valid_mail') }}" method="POST" name="formmail">
-        {{ form_start(form) }}<input class="mail_button" type="submit" name="valid" value="CREATE" />
-    {{ form_widget(form) }}
-
-    {{ form_end(form) }}
-        </form>
-</div>
-
+{{ form_errors(form.mail) }}
+<form class="form-inline" action="{{ path('valid_mail') }}" method="POST" name="formmail">
+    <div class="form-group has-success has-feedback">
+        <label class="control-label">enter your email to participate in future festivals</label>
+        <div class="input-group">
+            <input type="text" placeholder="Your email address" class="form-control">
+        </div>
+        <span id="inputGroupSuccess3Status" class="sr-only">(success)</span>
+    </div>
+    <button class="mail_button btn btn-warning" type="submit" name="valid"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></button>
+</form>

@@ -30,7 +30,6 @@ class DefaultController extends Controller
         ));
 
     }
-
     /**
      * @Route("/support", name="support")
      */

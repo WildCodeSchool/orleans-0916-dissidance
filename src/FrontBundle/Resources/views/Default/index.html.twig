@@ -3,7 +3,7 @@
 {% block header %}
     <header class="container_header">
         <div><img id="logo" src="{{ asset('img/Dissidance_21.png') }}"></div>
-        <img class="scroll_down" src="{{ asset('img/down.png') }}">
+        <a class="js-scrollTo" href="#about_dissidance"><img class="scroll_down" src="{{ asset('img/down.png') }}"></a>
     </header>
 {% endblock %}
 
@@ -63,12 +63,15 @@
                                             tuiles
                 <================================================================-->
 
-                {% for party in parties|reverse %}
-                    <div class="range">
-                    {%  include 'tuile.html.twig' %}
+                <div class="container"></div>
+                    <div class="row">
+                        <div class="col-lg-offset-1 col-lg-10">
+                            {% for party in parties|reverse %}
+                                {%  include 'tuile.html.twig' %}
+                            {% endfor %}
+                        </div>
                     </div>
-                {% endfor %}
-                <input type="range">
+                </div>
 
             </div>
         </div>
