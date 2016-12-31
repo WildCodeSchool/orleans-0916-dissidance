@@ -21,6 +21,7 @@ class PartyAdmin extends Admin{
             ->add('imgCover')
         ;
     }
+
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {

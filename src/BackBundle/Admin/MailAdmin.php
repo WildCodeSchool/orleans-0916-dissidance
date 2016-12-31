@@ -46,7 +46,6 @@ class MailAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
             ->add('mail')
         ;
     }

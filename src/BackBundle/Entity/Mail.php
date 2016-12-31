@@ -82,4 +82,35 @@ class Mail
         $this->reservation = $reservation;
     }
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->reservation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add reservation
+     *
+     * @param \BackBundle\Entity\Reservation $reservation
+     *
+     * @return Mail
+     */
+    public function addReservation(\BackBundle\Entity\Reservation $reservation)
+    {
+        $this->reservation[] = $reservation;
+
+        return $this;
+    }
+
+    /**
+     * Remove reservation
+     *
+     * @param \BackBundle\Entity\Reservation $reservation
+     */
+    public function removeReservation(\BackBundle\Entity\Reservation $reservation)
+    {
+        $this->reservation->removeElement($reservation);
+    }
 }
