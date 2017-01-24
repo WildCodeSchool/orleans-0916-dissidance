@@ -25,11 +25,8 @@ class PartyType extends AbstractType
             ->add('content')
             ->add('soundcloud')
             ->add('keyword')
-            ->add('imgCover', FileType::class)
-            ->add('imgSlides', FileType::class, array(
-                'multiple' => true,
-                'data_class' => null,
-            ));
+            ->add('imgCover', FileType::class, array('data_class' => null))
+            ;
 
     }
     

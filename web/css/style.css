@@ -13,7 +13,7 @@ body {
 
 .section {
     font-family: 'special elite', serif;
-    font-size: 25px;
+    font-size: 5vmin;
     margin-bottom: 5%;
 }
 /*====================================*\
@@ -43,6 +43,14 @@ body {
         width: 50%;
         margin: 10% 0 10% 0;
     }
+
+    .footer {
+        height: 400px;
+        background-color: rgba(255,255,255,0.3);
+    }
+    .mentions {
+        margin-bottom: 150px;
+    }
 }
 @media screen and (min-width: 1001px){
     #logo{
@@ -61,13 +69,20 @@ body {
         padding:0 50px 0 50px;
     }
     .about {
-        position: absolute;
         top: 50%;
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         -o-transform: translateY(-50%);
         transform: translateY(-50%);
+    }
+
+    .footer {
+        height: 220px;
+        background-color: rgba(255,255,255,0.3);
+    }
+    .mentions {
+        margin-top: 100px;
     }
 }
 
@@ -97,11 +112,10 @@ body {
 
     }
     #icon {
-        max-width: 100px;
-        height: 45px;
+        max-width: 200px;
+        width: 10vw;
         z-index: 20;
         background-color: rgba(241,240,234,0.7);
-
         border-radius: 60px;
     }
 
@@ -134,7 +148,7 @@ body {
         padding-bottom: 3vh;
         margin-left: 1em;
         margin-right: 1em;
-        font-size: 4.5vh;
+        font-size: 3vh;
         min-height: 30px;
 
     }
@@ -249,7 +263,7 @@ body {
 
     #nav {
         z-index: 20;
-        padding: 20px 10px 20px 10px;
+        padding: 20px 10px 8vh 10px;
         position: fixed;
         top: -45px;
         left: 0;
@@ -301,7 +315,7 @@ body {
     -moz-transition: all 1.2s ease;
     -o-transition: all 1.2s ease;
     transition: all 1.2s ease;
-    width: 80%;
+    width: 100%;
     z-index: 1;
 }
 
@@ -312,7 +326,9 @@ body {
     z-index: 1;
 }
 
-
+.row {
+    margin: 0;
+}
 
 
 
@@ -325,7 +341,7 @@ body {
     -o-transition: all 1s ease;
     transition: all 1s ease;
     z-index: 2;
-    width: 80%;
+    width: 100%;
 }
 
 .photo_sepia:hover{
@@ -334,12 +350,9 @@ body {
 }
 
 #logo_rotate1 {
-    width: 10%;
+    width: 6%;
     left: 40vw;
     margin-bottom: 30px;
-    -ms-transform: rotate(-15deg);
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
 }
 
 
@@ -358,17 +371,13 @@ body {
     float: left;
 }
 
-.footer {
-    height: 330px;
-    background-color: rgba(255,255,255,0.3);
-}
 
 .footer_section {
     vertical-align: middle;
 }
 .line {
     width: 80vw;
-    margin: 40px 10vw 40px 10vw;
+    margin: 20px 10vw 20px 10vw;
     height: 1px;
     background-color: darkslategrey;
 }
@@ -376,6 +385,7 @@ body {
 .first-line {
     height: 2px;
     background-color: darkslategrey;
+    margin: 20px 5vw 20px 5vw;
 }
 
 .mail_entry{
@@ -390,7 +400,7 @@ body {
     -ms-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     width: 35px;
-    margin: 40px 0 0 0;
+    margin: 0;
 }
 
 .control-label {
@@ -408,4 +418,23 @@ body {
 a {
     text-decoration: none;
     font-family: 'special elite', serif;
+}
+
+.error {
+    height: 100vh;
+    padding-top: 30vh;
+}
+
+
+.mentions {
+    margin-left: 10vw;
+    width: 80vw;
+}
+
+.thumbnail {
+    background-color: transparent;
+}
+
+.button_thumb {
+    background-color: rgba(0,0,0,0.3);
 }

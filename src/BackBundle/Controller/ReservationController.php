@@ -22,7 +22,7 @@ class ReservationController extends Controller
     /**
      * Lists all Reservation entities.
      *
-     * @Route("/", name="reservation_index")
+     * @Route("/resa", name="")
      * @Method("GET")
      */
     public function indexAction()
@@ -39,7 +39,7 @@ class ReservationController extends Controller
     /**
      * Lists all Reservation by Party entities.
      *
-     * @Route("/list", name="reservation_list")
+     * @Route("/", name="reservation_index")
      * @Method("GET")
      */
     public function listResaAction()

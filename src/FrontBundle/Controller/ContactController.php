@@ -14,47 +14,15 @@ use FrontBundle\Entity\ContactPFU;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 
+
 class ContactController extends Controller
 {
+
 
     /**
      * @Route("/contact", name="contact")
      */
-    public function contactAction(Request $request)
-    {
-        $contact = new Contact();
-        $form = $this->createForm(new ContactType(), $contact);
-        $session = $request->getSession();
-        $session->start();
-
-
-        $request = $this->getRequest();
-        if ($request->getMethod() == 'POST') {
-            $form->handleRequest($request);
-
-            if ($form->isValid()) {
-                $message = \Swift_Message::newInstance()
-                    ->setSubject('Contact Dissidance from Dissi.dance')
-                    ->setFrom('Dissidance@site.com')
-                    ->setTo('chapellequentin@live.fr')
-                    ->setBody($this->renderView('contact/sentMail.txt.twig', array('contact' => $contact)));
-                $this->get('mailer')->send($message);
-
-                $this->addFlash('contact-notice', 'Your contact Dissidance was successfully sent. Thank you!');
-
-                return $this->redirectToRoute('contact');
-            }
-        }
-
-        return $this->render('FrontBundle:Default:contact.html.twig', array(
-            'form' => $form->createView()
-        ));
-    }
-
-    /**
-     * @Route("/contact/PFU", name="contactPFU")
-     */
-    public function PlaceForUAction(Request $request)
+    public function ContactAction(Request $request)
     {
         $contact = new ContactPFU();
         $form = $this->createForm(new ContactPfuType(), $contact);
@@ -77,15 +45,15 @@ class ContactController extends Controller
 
 
                 $message = \Swift_Message::newInstance()
-                    ->setSubject('Place for Dissidance from Dissi.dance')
-                    ->setFrom('enquiries@symblog.co.uk')
-                    ->setTo('chapellequentin@live.fr')
+                    ->setSubject('Contact from Dissi.dance')
+                    ->setFrom('dissi@dance.fr')
+                    ->setTo('dissidance777@gmail.com')
                     ->setBody($this->renderView('contact/SentMailPlace.txt.twig', array('contact' => $contact)));
                 $this->get('mailer')->send($message);
 
                 $this->addFlash('contact-notice', 'Your contact Dissidance was successfully sent. Thank you!');
 
-                return $this->redirectToRoute('contactPFU');
+                return $this->redirectToRoute('contact');
             }
         }
 

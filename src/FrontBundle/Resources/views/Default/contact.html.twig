@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}{{ parent() }}<link rel="stylesheet" href="{{ asset('css/contact.css') }}"> {% endblock %}
+
+{% block stylesheets %}{{ parent() }}<link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}"><link rel="stylesheet" href="{{ asset('css/contact.css') }}"> {% endblock %}
 
 {% block title %}Contact{% endblock%}
 
@@ -16,7 +17,7 @@
     {{ path('home') ~ '#intimate_clubbing' }}
 {% endblock %}
 
-{% block body %}
+{% block content %}
     <header>
         <h1 class="contact_title">Contact D I S S I D A N C E</h1>
     </header>
@@ -26,7 +27,7 @@
         </div>
     {% endfor %}
 
-    <div class="container" style="width: 50%;>
+    <div class="container">
     {{ form_start(form) }}
 
                     {{form_label(form.name, 'Name')}}
@@ -42,11 +43,11 @@
                     {{form_errors(form.subject)}}
 
                     {{form_label(form.message, 'Message')}}
-                    {{form_widget(form.message, {'attr':{'class':'form-control'}}) }}
+                    {{form_widget(form.message, {'attr':{'class':'form-control', 'placeholder':'text'}}) }}
                     {{form_errors(form.message)}}
 
-            <div class="form-group"><input type="submit" value="Send" />
-            </div>
+
+        <button type="submit" class="btn btn-warning button_contact">Send</button>
     {{ form_end(form) }}
 
     </div>

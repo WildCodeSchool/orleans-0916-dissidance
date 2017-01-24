@@ -2,10 +2,12 @@
 <html>
 <head id="home">
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
     <title>{% block title %}D I S S I D A N C E{% endblock %}</title>
 
     {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/tuile.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/testpola.css') }}">
@@ -41,8 +43,7 @@
                 <li class="nav-li js-scrollTo"><a href="#about_dissidance">About Dissidance</a></li>
                 <li class="nav-li js-scrollTo"><a href="#intimate_clubbing">Intimate clubbing</a></li>
                 <li class="nav-li js-scrollTo"><a href="{{ path('support') }}">support</a></li>
-                <li class="nav-li js-scrollTo"><a href="{{ path('contactPFU') }}">I have the right place for you</a></li>
-                <li class="nav-li js-scrollTo"><a href="{{ path('contact') }}">Contact</a>
+                <li class="nav-li js-scrollTo"><a href="{{ path('contact') }}">Contact</a></li>
                 <li class="nav-li js-scrollTo" id="last_li"><a id="close_menu" href="##"><img src="{{ asset('img/cancel.png') }}"></a></li>
             </ul>
         </div>
@@ -55,7 +56,6 @@
                 <a class="js-scrollTo" href="{% block about_link %}#about_dissidance{% endblock %}">About Dissidance</a><span>/</span>
                 <a class="js-scrollTo" href="{% block intimate_link %}#intimate_clubbing{% endblock %}">Intimate clubbing</a><span>/</span>
                 <a class="js-scrollTo" href="{{ path('support') }}">Support</a><span class="slash">/</span>
-                <a class="js-scrollTo" href="{{ path('contactPFU') }}">I have the right place for you</a><span>/</span>
                 <a class="js-scrollTo" href="{{ path('contact') }}">Contact</a>
             </div>
         </div>

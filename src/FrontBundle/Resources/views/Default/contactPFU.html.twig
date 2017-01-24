@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}{{ parent() }}<link rel="stylesheet" href="{{ asset('css/contact.css') }}"> {% endblock %}
+{% block stylesheets %}{{ parent() }}<link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}"><link rel="stylesheet" href="{{ asset('css/contact.css') }}"> {% endblock %}
 
 {% block title %}Contact{% endblock%}
 
@@ -16,9 +16,9 @@
     {{ path('home') ~ '#intimate_clubbing' }}
 {% endblock %}
 
-{% block body %}
+{% block content %}
     <header>
-        <h1 class="contact_title">I HAVE A RIGHT PLACE FOR YOU</h1>
+        <h1 class="contact_title">Contact D I S S I D A N C E</h1>
     </header>
 
     {% for flash_message in app.session.flashBag.get('contact-notice') %}
@@ -27,7 +27,7 @@
         </div>
     {% endfor %}
 
-    <div class="container" style="width: 40%;">
+    <div class="container">
 
         {{ form_start(form) }}
 
@@ -41,14 +41,14 @@
         {{form_errors(form.email)}}
 
         {{form_label(form.message, 'Message')}}
-        {{form_widget(form.message, {'attr':{'class':'form-control'}}) }}
+        {{form_widget(form.message, {'attr':{'class':'form-control', 'placeholder':'Leave your message, including details such as adress // place capacity // place size // availability // etc. Don\'t forget to attach a picture. Thanks.'}}) }}
         {{form_errors(form.message)}}
 
         {{form_label(form.picture, 'Picture')}}
         {{form_widget(form.picture)}}
         {{form_errors(form.picture)}}
 
-        <div class="form-group"><input type="submit" value="Send" /></div>
+        <button type="submit" class="btn btn-warning button_contact">Send</button>
 
         {{ form_end(form) }}
 

@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class ResaController extends Controller
 {
     /**
-     * @Route("/party/new/{keyword}", name="reservation_new_user")
+     * @Route("/{keyword}", name="reservation_new_user")
      * @ParamConverter("party", class="BackBundle:Party")
      * @Method({"GET", "POST"})
      */

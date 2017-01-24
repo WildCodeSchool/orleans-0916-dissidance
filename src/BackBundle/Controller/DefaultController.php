@@ -10,7 +10,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/adm", name="index_adm")
+     * @Route("/", name="index_adm")
      */
     public function indexAction()
     {

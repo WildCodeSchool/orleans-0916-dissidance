@@ -4,6 +4,7 @@ h1 {
 
 label {
     font-family: 'Special Elite', serif;
+    margin-top: 25px;
 }
 
 .contact-notice {
@@ -17,6 +18,10 @@ label {
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
+}
+.button_contact {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 form.contact {
@@ -68,6 +73,7 @@ body {
 
 .contact_title {
     margin-bottom: 2vh;
+    font-family: 'Cutive Mono', serif;
 }
 
 input[type=submit] {
@@ -79,6 +85,15 @@ input[type=file] {
     position: relative;
 }
 
-input[id=contactPfu_picture] {
+#contactPfu_picture {
     font-family: 'Special Elite', serif;
+}
+#contactPfu_message,#contact_message {
+    font-family: 'Cutive Mono', serif;
+    height: 30vh;
+}
+
+.container {
+    width: 60vw;
+    max-width: 400px;
 }

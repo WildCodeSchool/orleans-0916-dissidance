@@ -8,9 +8,9 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    upload_directory: '%kernel.root_dir%/../web/uploads/placeForU'
-    uploadCover_directory: '%kernel.root_dir%/../web/uploads/imgCover'
-    uploadCover_directory: '%kernel.root_dir%/../web/uploads/imgSlide'
+    upload_directory: '%kernel.root_dir%/../www/uploads/placeForU'
+    uploadCover_directory: '%kernel.root_dir%/../www/uploads/imgCover'
+    uploadImgSlide_directory: '%kernel.root_dir%/../www/uploads/imgSlide'
 
 
 framework:
@@ -64,11 +64,10 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+        transport: "%mailer_transport%"
+        host:      "%mailer_host%"
+        username:  "%mailer_user%"
+        password:  "%mailer_password%"
 
 sonata_block:
     default_contexts: [cms]
@@ -87,4 +86,3 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: BackBundle\Entity\User
-

@@ -39,15 +39,6 @@ div.thumbnail {
     -moz-box-shadow: 0 0 30px 4px #000;
 }
 
-.tuile {
-    padding-right: 2vw;
-    padding-left: 2VW;
-}
-
-.container_tuile {
-    margin: 0 100px 0 100px;
-
-}
 
 iframe {
     margin-bottom: 10px;
@@ -63,7 +54,7 @@ iframe #document html body .widget .cookiePolicy {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    width: 400px;
+    max-height: 45vh;
 }
 
 .txt_modal {

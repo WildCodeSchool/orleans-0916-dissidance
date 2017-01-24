@@ -1,35 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}D I S S I D A N C E{% endblock %}</title>
+{% extends 'base.html.twig' %}
 
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-    {% endblock %}
-
-    {% block javascripts %}
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
-    {% endblock %}
-
-    <link rel="icon" type="image/x-icon" href="{{ asset('img/Dissidance_21.png') }}" />
-</head>
-
-    {% block body %}
-    {% block content %}
-<body>
-    <div class="container-fluid">
-        <div id="about_dissidance" class="about_dissidance">
+{% block content %}
+    <div>
+        <div class="error">
             <h2 style="font-size: 25px">D I S S I D A N C E - Error</h2>
-                <p>Oooops sorry ! An error occured. <br />
-                The server returned a "{{ status_code }} {{ status_text }}" <br />
-                Something is broken. We will fix it as soon as possible. <br />
-                We are sorry, click <a href="{{ path('home') }}">here <a/>for home</p>
+            <p>Oooops sorry ! An error occured. <br />
+            The server returned a "{{ status_code }} {{ status_text }}" <br />
+            Something is broken. We will fix it as soon as possible. <br />
+            We are sorry,<a href="{{ path('home') }}"> click here </a>for home</p>
         </div>
-</body>
+    </div>
 {% endblock %}
-{% endblock %}
-</html>

@@ -60,16 +60,6 @@ class PartyController extends Controller
                 $fileName
             );
 
-            foreach($party->getImgSlides() as $file)
-            {
-                $fileName = md5(uniqid()).'.'.$file->guessExtension();
-                $file->move(
-                    $this->getParameter('uploadCover_directory'),
-                    $fileName
-                );
-
-            }
-
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($party);
